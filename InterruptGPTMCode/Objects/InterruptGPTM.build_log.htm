@@ -1,0 +1,45 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.35.0.0
+Copyright (C) 2021 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Ahmed Eldaly, Cairo university, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.35.0.2
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.16
+Assembler:       Armasm.exe V6.16
+Linker/Locator:  ArmLink.exe V6.16
+Library Manager: ArmAr.exe V6.16
+Hex Converter:   FromElf.exe V6.16
+CPU DLL:         SARMCM3.DLL V5.35.0.2
+Dialog DLL:      DCM.DLL V1.17.3.0
+Target DLL:      UL2CM3.DLL V1.164.0.0
+Dialog DLL:      TCM.DLL V1.53.0.0
+ 
+<h2>Project:</h2>
+E:\EECE\Shell\Tasks\Week1\InterruptGPTM\InterruptGPTM.uvproj
+Project File Date:  09/14/2021
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.16', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Rebuild target 'Target 1'
+assembling startup.s...
+main.c(41): warning: implicit conversion changes signedness: 'int' to 'unsigned int' [-Wsign-conversion]
+        GPIO_PORTF_AFSEL_R &= ~0x0E;
+                           ~~ ^~~~~
+main.c(22): warning: unused function 'Timer0A_Handler' [-Wunused-function]
+static void Timer0A_Handler (void)
+            ^
+2 warnings generated.
+compiling main.c...
+linking...
+Program Size: Code=1100 RO-data=16 RW-data=0 ZI-data=1120  
+".\Objects\InterruptGPTM.axf" - 0 Error(s), 2 Warning(s).
+Build Time Elapsed:  00:00:06
+</pre>
+</body>
+</html>
