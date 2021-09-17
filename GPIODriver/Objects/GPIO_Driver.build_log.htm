@@ -1,0 +1,108 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.35.0.0
+Copyright (C) 2021 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Ahmed Eldaly, Cairo university, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.35.0.2
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.16
+Assembler:       Armasm.exe V6.16
+Linker/Locator:  ArmLink.exe V6.16
+Library Manager: ArmAr.exe V6.16
+Hex Converter:   FromElf.exe V6.16
+CPU DLL:         SARMCM3.DLL V5.35.0.2
+Dialog DLL:      DCM.DLL V1.17.3.0
+Target DLL:      UL2CM3.DLL V1.164.0.0
+Dialog DLL:      TCM.DLL V1.53.0.0
+ 
+<h2>Project:</h2>
+E:\EECE\Shell\Tasks\Week1\GPIO Driver\GPIO_Driver.uvproj
+Project File Date:  09/10/2021
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.16', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Build target 'Target 1'
+GPIO.c(2): warning: In file included from...
+./GPIO.h(5): warning: In file included from...
+./std_types.h(29): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+GPIO.c(2): warning: In file included from...
+./GPIO.h(6): warning: In file included from...
+./GPIO_REG_ADDRESSES.h(35): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+GPIO.c(2): warning: In file included from...
+./GPIO.h(21): warning: no newline at end of file [-Wnewline-eof]
+        
+        ^
+./GPIO.h(13): warning: typedef requires a name [-Wmissing-declarations]
+typedef struct
+^~~~~~~
+GPIO.c(6): warning: incompatible pointer to integer conversion initializing 'uint32' (aka 'unsigned long') with an expression of type 'uint32 *' (aka 'unsigned long *'); dereference with * [-Wint-conversion]
+        uint32 portAddress=port;
+               ^           ~~~~
+                           *
+GPIO.c(4): warning: no previous prototype for function 'portNum' [-Wmissing-prototypes]
+uint8 portNum (uint32* port)
+      ^
+GPIO.c(4): note: declare 'static' if the function is not intended to be used outside of this translation unit
+uint8 portNum (uint32* port)
+^
+static 
+GPIO.c(28): warning: non-void function does not return a value in all control paths [-Wreturn-type]
+}
+^
+GPIO.c(85): warning: implicit conversion loses integer precision: 'unsigned long' to 'uint8' (aka 'unsigned char') [-Wimplicit-int-conversion]
+        return (BIT_IS_SET(port,GPIODATA,bit));
+        ~~~~~~  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+./common_macros.h(90): note: expanded from macro 'BIT_IS_SET'
+#define BIT_IS_SET(PORT,REG,BIT) ( REG_VAL(PORT,REG) & (1<<BIT) )
+                                   ~~~~~~~~~~~~~~~~~~^~~~~~~~~~
+GPIO.c(83): warning: no previous prototype for function 'readBit' [-Wmissing-prototypes]
+uint8 readBit (uint32* port,uint32 bit)
+      ^
+GPIO.c(83): note: declare 'static' if the function is not intended to be used outside of this translation unit
+uint8 readBit (uint32* port,uint32 bit)
+^
+static 
+GPIO.c(88): warning: no previous prototype for function 'writeBit' [-Wmissing-prototypes]
+void writeBit (uint32* port,uint32 bit,uint8 data)
+     ^
+GPIO.c(88): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void writeBit (uint32* port,uint32 bit,uint8 data)
+^
+static 
+GPIO.c(30): warning: unused function 'enableClk' [-Wunused-function]
+static void enableClk (uint32* port)
+            ^
+GPIO.c(37): warning: unused function 'unlockPort' [-Wunused-function]
+static void unlockPort (uint32* port,uint8 pin)
+            ^
+GPIO.c(44): warning: unused function 'lockPort' [-Wunused-function]
+static void lockPort (uint32* port)
+            ^
+GPIO.c(50): warning: unused function 'pinDir' [-Wunused-function]
+static void pinDir (uint32* port,uint8 pin,uint8 dir)
+            ^
+GPIO.c(62): warning: unused function 'pullRes' [-Wunused-function]
+static void pullRes(uint32* port,uint8 pin,uint8 type)
+            ^
+15 warnings generated.
+compiling GPIO.c...
+linking...
+.\Objects\GPIO_Driver.axf: Error: L6218E: Undefined symbol SystemInit (referred from startup_tm4c123.o).
+Not enough information to list image symbols.
+Not enough information to list load addresses in the image map.
+Finished: 2 information, 0 warning and 1 error messages.
+".\Objects\GPIO_Driver.axf" - 1 Error(s), 15 Warning(s).
+Target not created.
+Build Time Elapsed:  00:00:02
+</pre>
+</body>
+</html>
