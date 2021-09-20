@@ -12,6 +12,7 @@ main.obj: C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/sys/_ty
 main.obj: C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/machine/_types.h
 main.obj: C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/machine/_stdint.h
 main.obj: C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/sys/_stdint.h
+main.obj: C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/assert.h
 main.obj: ../FreeRTOS.h
 main.obj: C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stddef.h
 main.obj: ../FreeRTOSConfig.h
@@ -22,6 +23,9 @@ main.obj: ../portmacro.h
 main.obj: ../mpu_wrappers.h
 main.obj: ../task.h
 main.obj: ../list.h
+main.obj: ../semphr.h
+main.obj: ../queue.h
+main.obj: ../timers.h
 main.obj: C:/ti/TivaWare_C_Series-2.2.0.295/utils/uartstdio.h
 main.obj: C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdarg.h
 main.obj: C:/ti/TivaWare_C_Series-2.2.0.295/inc/hw_memmap.h
@@ -30,6 +34,7 @@ main.obj: C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/sysctl.h
 main.obj: C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/gpio.h
 main.obj: C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/uart.h
 main.obj: C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/pin_map.h
+main.obj: C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h
 
 ../main.c:
 
@@ -55,6 +60,8 @@ C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/machine/_stdint.h
 
 C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/sys/_stdint.h:
 
+C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/assert.h:
+
 ../FreeRTOS.h:
 
 C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stddef.h:
@@ -75,6 +82,12 @@ C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stddef.h:
 
 ../list.h:
 
+../semphr.h:
+
+../queue.h:
+
+../timers.h:
+
 C:/ti/TivaWare_C_Series-2.2.0.295/utils/uartstdio.h:
 
 C:/ti/ccs1040/ccs/tools/compiler/ti-cgt-arm_20.2.5.LTS/include/stdarg.h:
@@ -90,4 +103,6 @@ C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/gpio.h:
 C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/uart.h:
 
 C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/pin_map.h:
+
+C:/ti/TivaWare_C_Series-2.2.0.295/driverlib/interrupt.h:
 

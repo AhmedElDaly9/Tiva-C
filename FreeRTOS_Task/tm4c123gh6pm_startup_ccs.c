@@ -81,11 +81,11 @@ void (* const g_pfnVectors[])(void) =
     0,                                      // Reserved
     0,                                      // Reserved
     0,                                      // Reserved
-    vPortSVCHandler,                      // SVCall handler
+    vPortSVCHandler,                        // SVCall handler
     IntDefaultHandler,                      // Debug monitor handler
     0,                                      // Reserved
-    xPortPendSVHandler,                      // The PendSV handler
-    xPortSysTickHandler,                      // The SysTick handler
+    xPortPendSVHandler,                     // The PendSV handler
+    xPortSysTickHandler,                    // The SysTick handler
     IntDefaultHandler,                      // GPIO Port A
     IntDefaultHandler,                      // GPIO Port B
     IntDefaultHandler,                      // GPIO Port C
@@ -301,3 +301,44 @@ IntDefaultHandler(void)
     {
     }
 }
+
+//*********** DisableInterrupts ***************
+// disable interrupts
+// inputs:  none
+// outputs: none
+void DisableInterrupts(void){
+    __asm ("    CPSID  I\n");
+}
+
+//*********** EnableInterrupts ***************
+// emable interrupts
+// inputs:  none
+// outputs: none
+void EnableInterrupts(void){
+    __asm  ("    CPSIE  I\n");
+}
+//*********** StartCritical ************************
+// make a copy of previous I bit, disable interrupts
+// inputs:  none
+// outputs: previous I bit
+void StartCritical(void){
+ __asm  ("    MRS    R0, PRIMASK  ; save old status \n"
+         "    CPSID  I            ; mask all (except faults)\n");
+}
+
+//*********** EndCritical ************************
+// using the copy of previous I bit, restore I bit to previous value
+// inputs:  previous I bit
+// outputs: none
+void EndCritical(void){
+    __asm  ("    MSR    PRIMASK, R0\n");
+}
+
+//*********** WaitForInterrupt ************************
+// go to low power mode while waiting for the next interrupt
+// inputs:  none
+// outputs: none
+void WaitForInterrupt(void){
+    __asm  ("    WFI\n");
+}
+
