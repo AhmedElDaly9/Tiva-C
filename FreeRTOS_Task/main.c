@@ -1,5 +1,5 @@
 /*
- * FreeRTOS LED control through UART0
+ * FreeRTOS LED control through UART0 PC communication
  * The UART receives the inputs 'R' or 'G' or 'B' from the user corresponding to the required to toggle LED,
  * Then the sender task sends the valid inputs to a queue,
  * The auto-reload timer gives the semaphore required to make the signal of receiving a character in queue,

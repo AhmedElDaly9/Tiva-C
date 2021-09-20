@@ -341,4 +341,3 @@ void EndCritical(void){
 void WaitForInterrupt(void){
     __asm  ("    WFI\n");
 }
-
