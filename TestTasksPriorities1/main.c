@@ -48,22 +48,28 @@ static void UARTStringSend(uint32_t ui32Base,uint8_t *Str)
 
 void vTask1( void *pvParameters )
 {
+	/*Getting the Task1 priority (NULL pointer was used to point that this is this task priority)*/
     UBaseType_t Task1Priority = uxTaskPriorityGet(NULL);
 
     for (;;)
     {
         UARTStringSend(UART0_BASE ,"Task 1 is running\r\n");
+		
+		/*Make the second task priority higher that this task*/
         vTaskPrioritySet(vTask2Handle, Task1Priority+1);
     }
 }
 
 void vTask2( void *pvParameters )
 {
+	/*Getting the Task2 priority (NULL pointer was used to point that this is this task priority)*/
     UBaseType_t Task2Priority = uxTaskPriorityGet(NULL);
 
     for( ;; )
     {
         UARTStringSend(UART0_BASE ,"Task 2 is running\r\n" );
+		
+		/*Decrease the second task priority by 2 to make it less than that of Task1 once more*/
         vTaskPrioritySet(vTask2Handle, Task2Priority-2);
     }
 }
@@ -90,10 +96,12 @@ static void UART_Init (void)
 
 int main(void)
 {
+	/*Use PLL for 80 MHz clock*/
     SysCtlClockSet(SYSCTL_SYSDIV_2_5 | SYSCTL_USE_PLL | SYSCTL_OSC_MAIN | SYSCTL_XTAL_16MHZ);
 
     UART_Init();
 
+	/*Creating Task1 with higher priority than that of Task2*/
     xTaskCreate(vTask1, "Task1", 1000, (void *) "Task1\n\r", 2, &vTask1Handle);
     xTaskCreate(vTask2, "Task2", 1000, (void *) "Task2\n\r", 1, &vTask2Handle);
 
