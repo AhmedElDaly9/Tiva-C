@@ -139,11 +139,8 @@ uint32_t TxHandler(void *pvCBData, uint32_t ui32Event, uint32_t ui32MsgValue,voi
 *****************************************************************************/
 uint32_t RxHandler(void *pvCBData, uint32_t ui32Event, uint32_t ui32MsgValue,void *pvMsgData)
 {
-
-
     if(ui32Event == USB_EVENT_RX_AVAILABLE) /*Incoming data event*/
     {
-
        g_ui32Flag=1;
     }
 
